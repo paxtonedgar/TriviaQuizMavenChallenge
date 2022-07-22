@@ -4,6 +4,7 @@ import org.example.file.FileTriviaQuizAdaptor;
 import org.example.file.TriviaQuizFileService;
 import org.example.trivia.implementations.JaysTriviaQuiz;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -11,7 +12,7 @@ import java.util.Scanner;
 public class TriviaQuizFactory {
     private Map<String, TriviaQuiz> quizzes;
     //Constructor to make our factory
-    public TriviaQuizFactory() {
+    public TriviaQuizFactory() throws IOException {
         quizzes = new HashMap<>();
         TriviaQuiz jaysGame = new JaysTriviaQuiz();
         quizzes.put("Jay", jaysGame); // Add each person's quiz like this
@@ -51,7 +52,7 @@ public class TriviaQuizFactory {
         return null;
     }
 
-    private TriviaQuiz getTriviaQuizFromFile() {
+    private TriviaQuiz getTriviaQuizFromFile() throws IOException {
         return new FileTriviaQuizAdaptor(TriviaQuizFileService.getInstance().getQuizFromFile());
     }
 }

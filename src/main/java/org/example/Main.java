@@ -4,10 +4,11 @@ import org.example.trivia.TriviaQuestion;
 import org.example.trivia.TriviaQuiz;
 import org.example.trivia.TriviaQuizFactory;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         //On my end of things,
         TriviaQuizFactory myFactory = new TriviaQuizFactory();
